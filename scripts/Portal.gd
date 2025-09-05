@@ -10,13 +10,13 @@ func _ready() -> void:
     body_entered.connect(_on_body_entered)
     body_exited.connect(_on_body_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     if not _player_inside:
         _timer = 0.0
         return
 
     if Input.is_action_pressed("interact"):
-        _timer += delta
+        _timer += _delta
         if label:
             label.text = "Portail: " + str(snappedf(hold_time - _timer, 0.1)) + "s"
         if _timer >= hold_time:

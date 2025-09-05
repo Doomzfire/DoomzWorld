@@ -5,6 +5,7 @@ extends Node2D
 @export var tile_size := Vector2i(512,512)
 @export var loot_count := 14
 @export var enemy_count := 6
+@export var obstacle_count := 18
 
 @onready var run_label: Label = $UI/RunInvLabel
 @onready var inv_panel: Panel = $UI/InventoryPanel
@@ -13,7 +14,6 @@ extends Node2D
 
 var biome_tex_path: String = "res://assets/ground_grass.png"
 var biome_name: String = "Prairie"
-
 
 func _inv_to_str(inv: Dictionary) -> String:
     if inv.is_empty():
@@ -28,6 +28,7 @@ func _ready() -> void:
     _choose_biome()
     _build_ground()
     _place_extract_zone()
+    _spawn_obstacles()
     _spawn_loot()
     _spawn_enemies()
     var zone := $ExtractZone
@@ -43,6 +44,7 @@ func _ready() -> void:
     _rebuild_hotbar()
 
 func _process(_delta: float) -> void:
+    _update_compass()
     if Input.is_action_just_pressed("inventory"):
         inv_panel.visible = not inv_panel.visible
     for i in range(1,6):
@@ -139,6 +141,16 @@ func _spawn_enemies() -> void:
         spr.texture = load("res://assets/slime.png")
         spr.centered = true
         e.add_child(spr)
+        var hp := TextureProgressBar.new()
+        hp.name = "HP"
+        hp.offset_left = -16.0
+        hp.offset_right = 16.0
+        hp.offset_top = -24.0
+        hp.offset_bottom = -16.0
+        hp.min_value = 0.0
+        hp.max_value = 30.0
+        hp.value = 30.0
+        e.add_child(hp)
         e.position = Vector2(
             rng.randf_range(-half_tiles_x * tile_size.x * 0.8, half_tiles_x * tile_size.x * 0.8),
             rng.randf_range(-half_tiles_y * tile_size.y * 0.8, half_tiles_y * tile_size.y * 0.8)
@@ -156,7 +168,7 @@ func _rebuild_inventory_ui() -> void:
         var itemdb := get_node("/root/ItemDB")
         var def: Dictionary = itemdb.get_def(key)
         var btn := Button.new()
-        var name_s: String = String(def.get("name", String(key)))
+        var name_s: String = String(def.get("name", key))
         btn.text = "%s x%d" % [name_s, count]
         var icon_path: String = String(def.get("icon", ""))
         if icon_path != "":
@@ -179,12 +191,12 @@ func _rebuild_hotbar() -> void:
             var key: String = str(ids[i])
             var itemdb := get_node("/root/ItemDB")
             var def: Dictionary = itemdb.get_def(key)
-            var name_s2: String = String(def.get("name", String(key)))
+            var name_s2: String = String(def.get("name", key))
             slot.text = "%d) %s x%d" % [i+1, name_s2, int(inv[key])]
             var icon_path: String = String(def.get("icon", ""))
             if icon_path != "":
                 slot.icon = load(icon_path)
-            slot.hint_tooltip = key
+            slot.tooltip_text = key
         hotbar.add_child(slot)
 
 func _use_hotbar_index(index: int) -> void:
@@ -211,3 +223,51 @@ func _use_hotbar_index(index: int) -> void:
 func _on_extracted() -> void:
     var gs := get_node("/root/GameState")
     gs.finish_run()
+
+
+func _spawn_obstacles() -> void:
+    var rng := RandomNumberGenerator.new()
+    rng.randomize()
+    var bounds_x := (half_tiles_x) * tile_size.x
+    var bounds_y := (half_tiles_y) * tile_size.y
+    for i in range(obstacle_count):
+        var is_tree := (rng.randf() < 0.6)
+        var tex_path := "res://assets/tree.png" if is_tree else "res://assets/rock.png"
+        var pos := Vector2(
+            rng.randf_range(-bounds_x * 0.85, bounds_x * 0.85),
+            rng.randf_range(-bounds_y * 0.85, bounds_y * 0.85)
+        )
+        # Avoid dropping exactly on player spawn or extract zone
+        if pos.distance_to(Vector2.ZERO) < 100.0:
+            continue
+        if has_node("ExtractZone") and pos.distance_to($ExtractZone.position) < 120.0:
+            continue
+        var sb := StaticBody2D.new()
+        sb.position = pos
+        var spr := Sprite2D.new()
+        spr.texture = load(tex_path)
+        spr.centered = true
+        var col := CollisionShape2D.new()
+        var shape := RectangleShape2D.new()
+        shape.size = Vector2( 36.0 if is_tree else 40.0, 24.0 if is_tree else 18.0 )
+        col.shape = shape
+        col.position = Vector2(0, 10.0 if is_tree else 0.0)
+        sb.add_child(spr)
+        sb.add_child(col)
+        add_child(sb)
+
+
+func _update_compass() -> void:
+    var arrow := get_tree().current_scene.get_node_or_null("UI/CompassArrow")
+    var label := get_tree().current_scene.get_node_or_null("UI/CompassLabel")
+    if not arrow or not label:
+        return
+    if not has_node("Player") or not has_node("ExtractZone"):
+        return
+    var player := $Player
+    var zone := $ExtractZone
+    var to_zone: Vector2 = zone.global_position - player.global_position
+    var dist: float = to_zone.length()
+    var angle: float = to_zone.angle()
+    arrow.rotation = angle
+    label.text = str(int(dist / 16.0)) + "m"  # approx. 16 px = 1 m

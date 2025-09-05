@@ -3,6 +3,7 @@ extends Node
 var player_id: String = ""
 var run_seed: int = 0
 var temp_run_inventory: Dictionary = {}
+var pre_run_loadout: Dictionary = {}
 
 const SAVE_DIR: String = "user://players"
 const ID_FILE: String = "user://players/player_id.json"
@@ -39,6 +40,22 @@ func start_run() -> void:
     rng.randomize()
     run_seed = int(rng.randi())
     reset_run_inventory()
+    # appliquer le loadout (déplacer du stash -> inventaire de run)
+    var loadout: Dictionary = pre_run_loadout.duplicate()
+    if not loadout.is_empty():
+        var stash: Dictionary = load_stash()
+        for k in loadout.keys():
+            var key: String = str(k)
+            var want: int = int(loadout[key])
+            var have: int = int(stash.get(key, 0))
+            var take: int = min(want, have)
+            if take > 0:
+                stash[key] = have - take
+                if int(stash[key]) <= 0:
+                    stash.erase(key)
+                add_run_item(key, take)
+        save_stash(stash)
+    pre_run_loadout = {}
     get_tree().change_scene_to_file("res://scenes/Run.tscn")
 
 func finish_run() -> void:
@@ -104,7 +121,6 @@ func _merge_run_into_stash() -> void:
             cur = int(stash[key])
         stash[key] = cur + add
     save_stash(stash)
-
 
 func run_inv_to_string() -> String:
     if temp_run_inventory.is_empty():
