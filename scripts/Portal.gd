@@ -1,11 +1,10 @@
 extends Area2D
 
-@export var hold_time := 2.0
+@export var hold_time := 1.2
 var _timer := 0.0
 var _player_inside := false
-@onready var label := $"../UI/HintLabel"
 
-signal extracted
+@onready var label := $"../UI/HintLabel"
 
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
@@ -19,24 +18,27 @@ func _process(delta: float) -> void:
     if Input.is_action_pressed("interact"):
         _timer += delta
         if label:
-            label.text = "Extraction: " + str(snappedf(hold_time - _timer, 0.1)) + "s"
+            label.text = "Portail: " + str(snappedf(hold_time - _timer, 0.1)) + "s"
         if _timer >= hold_time:
-            emit_signal("extracted")
+            if label:
+                label.text = "Expédition en cours..."
+            var gs := get_node("/root/GameState")
+            gs.start_run()
             _timer = 0.0
     else:
         if label:
-            label.text = "Maintiens E pour t'extraire"
+            label.text = "Appuie et maintiens E pour entrer dans le portail"
         _timer = 0.0
 
 func _on_body_entered(body: Node) -> void:
     if body.is_in_group("player"):
         _player_inside = true
         if label:
-            label.text = "Maintiens E pour t'extraire"
+            label.text = "Portail violet: maintiens E pour partir"
 
 func _on_body_exited(body: Node) -> void:
     if body.is_in_group("player"):
         _player_inside = false
         _timer = 0.0
         if label:
-            label.text = "Explore et trouve la zone orange pour t'extraire"
+            label.text = "WASD pour bouger, Shift pour sprinter. E = action"

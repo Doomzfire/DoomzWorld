@@ -9,8 +9,12 @@ var stamina := 100.0
 @export var stamina_drain := 20.0
 @export var stamina_regen := 12.0
 
+@export var max_health := 100
+var health: int = 100
+
 var input_vector := Vector2.ZERO
 @onready var stamina_bar := get_tree().current_scene.get_node_or_null("UI/StaminaBar")
+@onready var health_bar := get_tree().current_scene.get_node_or_null("UI/HealthBar")
 
 func _physics_process(delta: float) -> void:
     input_vector = Vector2(
@@ -35,3 +39,16 @@ func _physics_process(delta: float) -> void:
     if stamina_bar:
         stamina_bar.max_value = stamina_max
         stamina_bar.value = stamina
+    if health_bar:
+        health_bar.max_value = max_health
+        health_bar.value = health
+
+func apply_damage(amount: int) -> void:
+    health = max(health - amount, 0)
+    if health_bar:
+        health_bar.max_value = max_health
+        health_bar.value = health
+    if health <= 0:
+        var gs := get_node("/root/GameState")
+        gs.reset_run_inventory()
+        get_tree().change_scene_to_file("res://scenes/Lobby.tscn")

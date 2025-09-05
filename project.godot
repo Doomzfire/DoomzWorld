@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Extraction2D"
-run/main_scene="res://Main.tscn"
+config/name="Extraction2D ALL-IN"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="res://scripts/GameState.gd"
+ItemDB="res://scripts/ItemDB.gd"
 
 [display]
 

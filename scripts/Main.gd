@@ -1,17 +1,11 @@
 extends Node2D
 
-@onready var hint_label := $UI/HintLabel
-
 func _ready() -> void:
     _ensure_input()
-    var zone := $ExtractZone
-    if zone:
-        zone.extracted.connect(_on_extracted)
+    call_deferred("_go_to_lobby")
 
-func _on_extracted() -> void:
-    if hint_label:
-        hint_label.text = "Extraction réussie ! (Étape 2: sauvegarde du loot)"
-    print("Extraction réussie ! (Étape 2 : sauvegarder le loot ici)")
+func _go_to_lobby() -> void:
+    get_tree().change_scene_to_file("res://scenes/Lobby.tscn")
 
 func _ensure_input() -> void:
     var mapping: Dictionary = {
@@ -20,7 +14,13 @@ func _ensure_input() -> void:
         "ui_left": KEY_A,
         "ui_right": KEY_D,
         "sprint": KEY_SHIFT,
-        "interact": KEY_E
+        "interact": KEY_E,
+        "inventory": KEY_I,
+        "hotbar_1": KEY_1,
+        "hotbar_2": KEY_2,
+        "hotbar_3": KEY_3,
+        "hotbar_4": KEY_4,
+        "hotbar_5": KEY_5
     }
     for action in mapping.keys():
         if not InputMap.has_action(action):
