@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="99"]
+
 
 [ext_resource type="Script" path="res://scripts/Lobby.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/Portal.gd" id="2"]
@@ -74,7 +76,6 @@ shape = SubResource("1")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI"]
 offset_left = 16.0
@@ -161,3 +162,5 @@ text = "Vider le loadout"
 
 [node name="CloseBtn" type="Button" parent="UI/ChestPanel/Buttons"]
 text = "Fermer"
+
+[node name="HUD" parent="." instance=ExtResource("99")]

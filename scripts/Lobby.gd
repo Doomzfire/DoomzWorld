@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var stash_label: Label = $UI/StashLabel
+@onready var stash_label: Label = get_tree().current_scene.get_node_or_null("HUD/StashLabel")
 
 func _ready() -> void:
     _refresh_stash()

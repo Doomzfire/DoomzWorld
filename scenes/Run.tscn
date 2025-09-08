@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="99"]
+
 
 [ext_resource type="Script" path="res://scripts/Run.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2"]
@@ -33,7 +35,6 @@ shape = SubResource("1")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI"]
 offset_left = 16.0
@@ -102,3 +103,5 @@ stretch_mode = 0
 offset_left = 1160.0
 offset_top = 44.0
 text = "0m"
+
+[node name="HUD" parent="." instance=ExtResource("99")]

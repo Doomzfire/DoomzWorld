@@ -7,14 +7,13 @@ extends Node2D
 @export var enemy_count := 6
 @export var obstacle_count := 18
 
-@onready var run_label: Label = $UI/RunInvLabel
-@onready var inv_panel: Panel = $UI/InventoryPanel
-@onready var inv_grid: GridContainer = $UI/InventoryPanel/InvGrid
-@onready var hotbar: HBoxContainer = $UI/Hotbar
+@onready var run_label: Label = get_tree().current_scene.get_node_or_null("HUD/RunInvLabel")
+@onready var inv_panel: Panel = get_tree().current_scene.get_node_or_null("HUD/InventoryPanel")
+@onready var inv_grid: GridContainer = get_tree().current_scene.get_node_or_null("HUD/InventoryPanel")/InvGrid
+@onready var hotbar: HBoxContainer = get_tree().current_scene.get_node_or_null("HUD/Hotbar")
 
 var biome_tex_path: String = "res://assets/ground_grass.png"
 var biome_name: String = "Prairie"
-
 func _inv_to_str(inv: Dictionary) -> String:
     if inv.is_empty():
         return "Run: (vide)"
@@ -42,6 +41,10 @@ func _ready() -> void:
         run_label.text = _inv_to_str(gs.get_run_inventory())
     _rebuild_inventory_ui()
     _rebuild_hotbar()
+    var arrow_tex := load("res://assets/compass_arrow.png")
+    var arrow_node := get_tree().current_scene.get_node_or_null("HUD/CompassArrow")
+    if arrow_node and arrow_tex:
+        arrow_node.texture = arrow_tex
 
 func _process(_delta: float) -> void:
     _update_compass()
