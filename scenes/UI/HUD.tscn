@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://caledfmu8b165"]
+
+[ext_resource type="Script" uid="uid://bhtna3nnjxbjg" path="res://scripts/ui/menus/inventory_panel.gd" id="1_5fyfn"]
+[ext_resource type="Script" uid="uid://dpmevrdstohdo" path="res://scripts/ui/hud.gd" id="1_vphgt"]
+[ext_resource type="PackedScene" uid="uid://pa1bmivu06tb" path="res://scenes/UI/ItemContextMenu.tscn" id="2_7n4fj"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_vphgt")
+
+[node name="InventoryPanel" type="Panel" parent="."]
+offset_left = 1551.0
+offset_top = 25.0
+offset_right = 1894.0
+offset_bottom = 359.0
+script = ExtResource("1_5fyfn")
+
+[node name="Label" type="Label" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 3.0
+offset_right = 202.0
+offset_bottom = 26.0
+text = "Inventory"
+
+[node name="GridContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 37.0
+offset_right = 331.0
+offset_bottom = 310.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 5
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 17.0
+offset_top = 602.0
+offset_right = 257.0
+offset_bottom = 628.0
+
+[node name="ItemContextMenu" parent="." instance=ExtResource("2_7n4fj")]

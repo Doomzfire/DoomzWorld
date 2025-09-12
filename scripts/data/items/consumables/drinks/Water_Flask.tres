@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cf61uo4uw1f58"]
+
+[ext_resource type="Texture2D" uid="uid://d3ah0ov0nkuq" path="res://assets/textures/item/Waterskin.png" id="1_ulq07"]
+[ext_resource type="Script" uid="uid://centwje7033j4" path="res://scripts/data/items/item.gd" id="2_cwsn0"]
+
+[resource]
+script = ExtResource("2_cwsn0")
+name = "Water Flask"
+description = "Restore +25 "
+icon = ExtResource("1_ulq07")
+item_type = "Consumable"
+metadata/_custom_type_script = "uid://centwje7033j4"

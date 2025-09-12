@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://lwt1prg8cygg"]
+
+[ext_resource type="Script" uid="uid://vv4ioaenfol" path="res://scripts/core/world_root.gd" id="1_7lc7b"]
+[ext_resource type="PackedScene" uid="uid://caledfmu8b165" path="res://scenes/UI/HUD.tscn" id="2_uxhqt"]
+[ext_resource type="PackedScene" uid="uid://c76iy2riofvyw" path="res://scenes/maps/Shelter.tscn" id="3_kkarr"]
+[ext_resource type="PackedScene" uid="uid://dym73gtxlqqtq" path="res://scenes/characters/Player.tscn" id="4_uxhqt"]
+
+[node name="WorldRoot" type="Node2D"]
+script = ExtResource("1_7lc7b")
+
+[node name="HUD" parent="." instance=ExtResource("2_uxhqt")]
+
+[node name="Player" parent="." instance=ExtResource("4_uxhqt")]
+top_level = true
+position = Vector2(3709, 2252)
+
+[node name="Shelter" parent="." instance=ExtResource("3_kkarr")]
