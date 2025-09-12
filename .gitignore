@@ -1,0 +1,15 @@
+# Godot auto-generated
+.import/
+export/
+*.import
+*.md5
+*.ctex
+*.tscn-editstate-*
+*.gd-folding-*
+
+# Godot editor cache
+.godot/editor/*
+
+# OS
+Thumbs.db
+.DS_Store
