@@ -1,0 +1,238 @@
+[gd_scene load_steps=11 format=3 uid="uid://c76iy2riofvyw"]
+
+[ext_resource type="Script" uid="uid://bfdepjcwdwqoi" path="res://scripts/gameplay/level/shelter.gd" id="1_50167"]
+[ext_resource type="Texture2D" uid="uid://b0s3a67qpivc7" path="res://assets/textures/Woodenplank.png" id="2_l5xpq"]
+[ext_resource type="Texture2D" uid="uid://dbrdua1kt1ekd" path="res://assets/textures/WoodenplankStair.png" id="3_jb3wx"]
+[ext_resource type="Texture2D" uid="uid://btbmpiuklf2su" path="res://assets/textures/environment/bush1.png" id="4_gcbk7"]
+[ext_resource type="Texture2D" uid="uid://n1d63y25f2kg" path="res://assets/textures/environment/bush2.png" id="5_jpcx1"]
+[ext_resource type="PackedScene" uid="uid://d0vytvhpoqhpg" path="res://scenes/items/ItemPickup.tscn" id="5_oj2ct"]
+[ext_resource type="Resource" uid="uid://ck0jyod45j2e3" path="res://scripts/data/items/consumables/foods/berry.tres" id="6_gcbk7"]
+[ext_resource type="Texture2D" uid="uid://jumd7lg2gol6" path="res://assets/textures/environment/bush3.png" id="6_x7j1u"]
+[ext_resource type="Resource" uid="uid://cf61uo4uw1f58" path="res://scripts/data/items/consumables/drinks/Water_Flask.tres" id="7_jpcx1"]
+[ext_resource type="Texture2D" uid="uid://57g3p2wcog40" path="res://assets/textures/environment/Bush.png" id="7_k6hxi"]
+
+[node name="Shelter" type="Node2D"]
+script = ExtResource("1_50167")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(301, 175)
+
+[node name="Woodenplank4" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(12, -76.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(-152, 8.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank5" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(159, 0.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank6" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(311, 76.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank2" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(0, 84.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank3" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(153, 161.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank7" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(463, 154.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank8" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(299, 239.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank9" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(610, 231.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank10" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(762, 307.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank11" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(451, 315.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank12" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(604, 392.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank13" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(917, 387.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank14" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(753, 472.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank15" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1064, 464.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank16" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1216, 540.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank17" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(905, 548.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank19" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1375, 620.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank18" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1058, 625.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank20" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1211, 705.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank21" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1522, 697.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank22" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1674, 773.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank23" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1363, 781.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank24" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1516, 858.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank25" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1826, 851.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank26" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1662, 936.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank27" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1973, 928.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank28" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2125, 1004.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank29" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1814, 1012.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank30" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(1967, 1089.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank31" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2280, 1084.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank32" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2116, 1169.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank33" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2427, 1161.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank34" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2579, 1237.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank35" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2268, 1245.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="Woodenplank36" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2421, 1322.5)
+texture = ExtResource("2_l5xpq")
+
+[node name="WoodenplankStair" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2712, 1348)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair2" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2573, 1426)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair3" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2854, 1502)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair4" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2714, 1582)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair5" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(3001, 1653)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair6" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(2862, 1731)
+texture = ExtResource("3_jb3wx")
+
+[node name="Bush1" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(3311, 1653)
+scale = Vector2(0.4826, 0.546093)
+texture = ExtResource("4_gcbk7")
+
+[node name="WoodenplankStair7" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(3143, 1807)
+texture = ExtResource("3_jb3wx")
+
+[node name="WoodenplankStair8" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(3003, 1887)
+texture = ExtResource("3_jb3wx")
+
+[node name="Bush2" type="Sprite2D" parent="TileMapLayer"]
+top_level = true
+position = Vector2(3526, 2358)
+scale = Vector2(0.485653, 0.492369)
+texture = ExtResource("5_jpcx1")
+
+[node name="Bush3" type="Sprite2D" parent="TileMapLayer"]
+top_level = true
+position = Vector2(3264, 2183)
+scale = Vector2(0.5, 0.507326)
+texture = ExtResource("6_x7j1u")
+
+[node name="Bush" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(3674, 1732)
+scale = Vector2(0.452075, 0.559524)
+texture = ExtResource("7_k6hxi")
+
+[node name="ItemsPickup" parent="." instance=ExtResource("5_oj2ct")]
+position = Vector2(3188, 1737)
+
+[node name="ItemsPickup2" parent="." instance=ExtResource("5_oj2ct")]
+position = Vector2(3596, 1861)
+rotation = -0.523598
+item = ExtResource("6_gcbk7")
+
+[node name="ItemsPickup4" parent="." instance=ExtResource("5_oj2ct")]
+position = Vector2(3589, 1939)
+rotation = -0.523598
+item = ExtResource("6_gcbk7")
+
+[node name="ItemsPickup5" parent="." instance=ExtResource("5_oj2ct")]
+position = Vector2(3663, 1905)
+rotation = 0.785397
+item = ExtResource("6_gcbk7")
+
+[node name="ItemsPickup3" parent="." instance=ExtResource("5_oj2ct")]
+position = Vector2(3358, 1818)
+item = ExtResource("7_jpcx1")

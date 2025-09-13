@@ -1,0 +1,295 @@
+[gd_scene load_steps=58 format=3 uid="uid://kuxf7xmilan1"]
+
+[ext_resource type="Script" uid="uid://c8idd05pqfukg" path="res://scripts/ui/menus/main_menu.gd" id="1_ow34m"]
+[ext_resource type="Texture2D" uid="uid://csjb4ane585oy" path="res://assets/ui/mainmenu/DoomZWorld.Png" id="3_826wr"]
+[ext_resource type="Texture2D" uid="uid://dnmr0vy3l21dq" path="res://assets/ui/mainmenu/background/background_desert.png" id="4_sfdnv"]
+[ext_resource type="Texture2D" uid="uid://jn6wwmkm6v0m" path="res://assets/ui/mainmenu/background/background_greenfall.png" id="5_frhrr"]
+[ext_resource type="Script" uid="uid://obplarejlmsv" path="res://scripts/ui/menus/setting_panel.gd" id="5_kgeya"]
+[ext_resource type="Script" uid="uid://2c1jnly71y3p" path="res://scripts/ui/menus/music_manager.gd" id="6_qa57o"]
+[ext_resource type="AudioStream" uid="uid://cb6vdlow5jbdl" path="res://sounds/sfx/hustle_buton.mp3" id="11_sfdnv"]
+[ext_resource type="AudioStream" uid="uid://bfeydplp75r7r" path="res://sounds/sfx/click_buton.mp3" id="12_frhrr"]
+
+[sub_resource type="Theme" id="Theme_2wh52"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v41fp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7shrw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bky6r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viowm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n6yq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yovvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
+bg_color = Color(0.984314, 0.384314, 0.0392157, 0.635294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2axsc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.972549, 0.4, 0.0196078, 0.901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
+bg_color = Color(0.141176, 0.0352941, 0.0196078, 1)
+
+[sub_resource type="Theme" id="Theme_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm0al"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7r3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4mxc"]
+bg_color = Color(0.141176, 0.0352941, 0.0196078, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os5dr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duata"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw0hr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+bg_color = Color(0.984314, 0.384314, 0.0392157, 0.635294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnvml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
+bg_color = Color(0.972549, 0.4, 0.0196078, 0.901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3xvo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mipys"]
+bg_color = Color(0.141176, 0.0352941, 0.0196078, 1)
+
+[sub_resource type="Theme" id="Theme_l72w3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynb5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejntt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5faoh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3y1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krgl8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbqq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a8k8"]
+bg_color = Color(0.984314, 0.384314, 0.0392157, 0.635294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1mrw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7la6k"]
+bg_color = Color(0.972549, 0.4, 0.0196078, 0.901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pqvh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nypq"]
+bg_color = Color(0.141176, 0.0352941, 0.0196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prsce"]
+
+[sub_resource type="Theme" id="Theme_826wr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kc01p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggp3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptake"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06ihv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1t58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr3el"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hubol"]
+bg_color = Color(0.984314, 0.384314, 0.0392157, 0.635294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cpub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vx4p"]
+bg_color = Color(0.972549, 0.4, 0.0196078, 0.901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyf07"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdapf"]
+bg_color = Color(0.141176, 0.0352941, 0.0196078, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.662, 1.52951)
+script = ExtResource("1_ow34m")
+backgrounds = Array[Texture2D]([ExtResource("4_sfdnv"), ExtResource("5_frhrr")])
+background_change_interval = null
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1413.0
+offset_bottom = 838.0
+scale = Vector2(0.817825, 0.843244)
+stretch_mode = 6
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0505
+offset_top = -185.68
+offset_right = 1144.05
+offset_bottom = 428.32
+texture = ExtResource("3_826wr")
+stretch_mode = 6
+
+[node name="MenuButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 106.498
+offset_top = 627.652
+offset_right = 733.498
+offset_bottom = 674.652
+scale = Vector2(1.5, 1.5)
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MenuButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2wh52")
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxFlat_v41fp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_7shrw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bky6r")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_viowm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1n6yq")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_yovvs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_2axsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wrgne")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
+action_mode = 0
+text = "Play"
+icon_alignment = 1
+
+[node name="SettingButton" type="Button" parent="MenuButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_ow34m")
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxFlat_hm0al")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_i7r3k")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_l4mxc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_os5dr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_duata")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lw0hr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_826wr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_gnvml")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ucygd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_d3xvo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mipys")
+action_mode = 0
+text = "Setting"
+
+[node name="QuitButton" type="Button" parent="MenuButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_l72w3")
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxFlat_ynb5t")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ejntt")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5faoh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_c3y1w")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_krgl8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vbqq2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8a8k8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_h1mrw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7la6k")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2pqvh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nypq")
+action_mode = 0
+text = "Quit"
+
+[node name="SettingPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0.623529, 0.105882, 0.0431373, 0.933333)
+layout_mode = 0
+offset_left = 162.454
+offset_top = 156.259
+offset_right = 1479.45
+offset_bottom = 713.259
+scale = Vector2(0.621831, 0.780731)
+theme_override_styles/panel = SubResource("StyleBoxFlat_prsce")
+script = ExtResource("5_kgeya")
+
+[node name="BackSettingButton" type="Button" parent="SettingPanel"]
+layout_mode = 0
+offset_left = 1146.0
+offset_top = 10.0
+offset_right = 1309.0
+offset_bottom = 56.0
+theme = SubResource("Theme_826wr")
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxFlat_kc01p")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ggp3y")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ptake")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_06ihv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_m1t58")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qr3el")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hubol")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_0cpub")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8vx4p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_eyf07")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tdapf")
+action_mode = 0
+text = "Back"
+
+[node name="Label" type="Label" parent="SettingPanel"]
+layout_mode = 0
+offset_left = 78.2592
+offset_top = 160.0
+offset_right = 124.259
+offset_bottom = 183.0
+scale = Vector2(3, 3)
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="SettingPanel"]
+layout_mode = 0
+offset_left = 242.869
+offset_top = 183.396
+offset_right = 634.869
+offset_bottom = 199.396
+scale = Vector2(2, 2)
+
+[node name="MuteMusic" type="CheckBox" parent="SettingPanel"]
+layout_mode = 0
+offset_left = 1054.69
+offset_top = 169.998
+offset_right = 1134.69
+offset_bottom = 200.998
+scale = Vector2(2, 2)
+text = "Mute"
+
+[node name="MusicManager" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_qa57o")
+
+[node name="MainSoundtrack" type="AudioStreamPlayer" parent="MusicManager"]
+autoplay = true
+
+[node name="ClickButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_frhrr")
+
+[node name="HoverButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sfdnv")
+
+[connection signal="pressed" from="MenuButton/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuButton/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="MenuButton/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingPanel/BackSettingButton" to="." method="_on_button_pressed"]
